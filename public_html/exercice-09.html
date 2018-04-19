@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+    <head>
+        <title>aeneamaeshun</title>
+        <link href="css/newcss.css" rel="stylesheet" type="text/css" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="js/lib/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script>
+            $(document).ready(function () {
+                $('#btn1').click(masquer);
+                $('#btn2').click(afficher);
+                $('#btn3').click(animerJQ);
+                $('#btn4').click(animerCSS);
+
+            });
+            function masquer() {
+                $('.result').hide('slow');
+
+            }
+            function afficher() {
+                $('.result').show('slow');
+            }
+            function animerJQ() {
+                $('.result').animate({
+                    width: '90%',
+                },
+                        {
+                            duration: 3000,
+                            queue: true
+                        }).animate({
+                    height: '400px'
+                }, {
+                    duration: 3000
+                }).animate({
+                    borderRadius: '200px'
+                }, {
+                    duration: 3000
+                });
+            }
+
+            function animerCSS() {
+                $('.result').addClass('transition');
+                //$('.result').addClass('animation');
+            }
+
+        </script>
+        <style>
+            .result {
+                width:200px;
+                height:200px;
+                border:1px solid black;
+                background-color:red;
+                margin:20px;      
+            }
+            .transition {
+                background-color:yellow;
+                transition:background-color 5s ease, width 5s, height 5s;
+                width:400px;
+                height:400px;
+            }
+
+            .animation {
+                animation: monAnimation 5s linear infinite;
+            }
+            @keyframes monAnimation {
+                0% {
+                    background-color:red;
+                    border-radius:0px;
+                }
+                50% {
+                    background-color:yellow;
+                    border-radius:200px;  
+                }
+                100% {
+                    background-color:green;
+                    border-radius:200px;  
+                    transform:rotate(45deg);
+                }
+            }
+
+            #btn4:hover {
+                animation: tourner 1s linear infinite;
+            }
+            @keyframes tourner {
+                0% {
+                    transform:rotate(0deg);)
+                }
+                50% {
+                    transform:rotate(180deg);)
+                }
+                100% {
+
+                    transform:rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="page">
+            <button id="btn1">Masquer_______</button>
+            <button id="btn2">Afficher_______</button><br>
+            <button id="btn3">Animer(jQuery)_</button>
+            <button id="btn4">Animer(CSS3)__</button><br>
+            <div class="result"></div>
+        </div>
+    </body>
+
+</html>

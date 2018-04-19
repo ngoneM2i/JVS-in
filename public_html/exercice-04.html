@@ -6,50 +6,49 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>JVS-IN : Exerciec 04</title>
         <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>
-            function Employe(nom, fonction, salaire) {
-                this.nom = nom;
-                this.fonction = fonction;
-                this.salaire = salaire;
-                this.afficher = function () {
-                    return this.nom + ' ' + this.fonction + ' ' + this.salaire;
-                };
-            };
+            function init() {
+                var btn = document.querySelector('#btn');
+                btn.addEventListener('click', function() {
+                     var result = document.querySelector('#result');
+                     var a = document.createElement('a');
+                     a.href = "http://google.fr";
+                     a.innerHTML = "Google";
+                     result.appendChild(a);
+                 
+                   // alert('ok');
+                });
+           //tn.onclick = function() {
+            //
             
-            var pierre = new Employe('Pierre', 'Developpeur', 3000);
-            console.log(pierre.afficher());
-
-            Date.prototype.frenchDate = function () {
-                var options = {
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit'};
-                return this.toLocaleDateString('fr', options);
-            };
-            
-            console.log((new Date()).frenchDate());
-            var produit = {
-                nom: 'Chateau la pompe',
-                categorie: 'Boisson',
-                prix: 12.0,
-                afficher: function () {
-                    console.log(this.nom);
-                    console.log(this.categorie);
-                }
-            }
-            produit.afficher();
-            
+             var btn2 = document.querySelector('#btn2');
+             btn2.onclick = function() {
+                 var result = document.querySelector('#result');
+                   //result.innerHTML = '';
+                   var colA = result.querySelectorAll('a');
+                   for (var i = colA.length-1; i >= 0; i--) {
+                       var a = colA[i];
+                       var content = a.innerHTML;
+                       result.removeChild(a);
+                       var text = document.createTextNode(content);
+                       result.append(text);
+                        
+                } ;          
+             };
+        }
+           window.addEventListener('load', init);
         </script>
     </head>
     <body>
-        <div>TODO write content COUCOU</div>
+        <div id ="page">
+            <button id="btn">Ajouter un lien</button>
+            <button id="btn2">Supprimer un lien</button>
+            <div id="result"></div>
+            <progress value="0.5"></progress>           
+        </div>
     </body>
 </html>

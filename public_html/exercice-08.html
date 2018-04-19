@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -6,16 +7,81 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>JVS-IN : Exerciec 08</title>
         <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <script src="js/lib/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script>
+            $(document).ready(function () {
+                $('td:contains(1)').next().css('background-color', 'blue');
+                $('td:contains(2)').nextAll().css('background-color', 'yellow');
+                $('td:contains(3)').nextAll().addBack().css('background-color', 'green');
+                $('td:contains(4)').prev().css('background-color', 'pink');
+                $('td:contains(5)').prevAll().css('background-color', 'red');
+                $('td:contains(6)').parent().chidren().css('background-color', 'black');
+
+
+            });
+        </script>
     </head>
     <body>
-        <div>
-            <div>
-            </div>
+        <div id="page">
+            <table border="1">
+    <thead>
+        <tr>
+            <th>Cell 01</th>
+            <th>Cell 02</th>
+            <th>Cell 03</th>
+            <th>Cell 04</th>
+            <th>Cell 05</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>2</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>3</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>4</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>5</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>6</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
 
         </div>
     </body>

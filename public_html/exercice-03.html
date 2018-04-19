@@ -6,34 +6,50 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>JVS-IN : Exerciec 03</title>
         <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>
-            function init() {
-                var dt = new Date();
-                var horloge = document.querySelector('#horloge');
+            function Employe(nom, fonction, salaire) {
+                this.nom = nom;
+                this.fonction = fonction;
+                this.salaire = salaire;
+                this.afficher = function () {
+                    return this.nom + ' ' + this.fonction + ' ' + this.salaire;
+                };
+            };
+            
+            var pierre = new Employe('Pierre', 'Developpeur', 3000);
+            console.log(pierre.afficher());
+
+            Date.prototype.frenchDate = function () {
                 var options = {
                     weekday: 'long',
-                    year: 'numeric', 
+                    year: 'numeric',
                     month: 'long',
                     day: 'numeric',
                     hour: '2-digit',
                     minute: '2-digit',
                     second: '2-digit'};
-                
-                var lang = navigator.language;
-                            
-                horloge.innerHTML = dt.toLocaleDateString(lang, options);
-                window.setTimeout(init, 1000);
+                return this.toLocaleDateString('fr', options);
+            };
+            
+            console.log((new Date()).frenchDate());
+            var produit = {
+                nom: 'Chateau la pompe',
+                categorie: 'Boisson',
+                prix: 12.0,
+                afficher: function () {
+                    console.log(this.nom);
+                    console.log(this.categorie);
+                }
             }
-            window.addEventListener('load', init);
-         </script>
+            produit.afficher();
+            
+        </script>
     </head>
     <body>
-        <div id='page'>
-            <div id='horloge'></div>
-        </div>
+        <div>TODO write content COUCOU</div>
     </body>
 </html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function init() {
+                var frm = document.querySelector('form');
+                frm.onsubmit = function (event) {
+                    /*
+                     var nom = document.querySelector('#nom');
+                     if (nom.value.trim() === '' || email.value.trim() ==='');
+                     alert('Erreur(s) de saisie!');
+                     event.preventDefault();
+                     }*/
+                    var ul = document.querySelector('#erreur');
+                    ul.innerHTML = '';
+                    if (!this.checkValidity()) {
+                        var saisies = document.querySelectorAll('input:invalid');
+                        var msg = '';
+                        for (var i = 0; i < saisies.length; i++) {
+                            msg += '<li>' + saisies[i].name + ': ' + saisies[i].validationMessage + '</li>';
+                        }
+                        ul.style.display = 'block';
+                        ul.innerHTML = msg;
+                        event.preventDefault();
+                    } else {
+                        ul.style.display = 'none';
+                    }
+                }
+            }
+            window.addEventListener('load', init);
+        </script>
+    </head>
+    <body>
+        <div id="page"></div>
+
+                
+            <form novalidate>   
+                <fieldset> 
+                    <legend>Saisissez vos informations</legend>  
+                <div class="row">
+                    <label for="nom">Nom</label>
+                    <div class="control">
+                        <input type="text" id="nom" name="nom" required/> 
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="nom">Email</label>
+                    <div class="control">
+                        <input type="email" id="email" name="email" required/> 
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="nom">Envoyer</label>
+                    <div class="control offset">
+                        <input type="submit" value="Envoyer"/> 
+                    </div> 
+                </div>
+                 </fieldset>
+        <ul id="erreur"></ul>
+            </form>
+       
+    </body>
+</html>

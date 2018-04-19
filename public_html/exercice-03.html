@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function init() {
+                var dt = new Date();
+                var horloge = document.querySelector('#horloge');
+                var options = {
+                    weekday: 'long',
+                    year: 'numeric', 
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'};
+                
+                var lang = navigator.language;
+                            
+                horloge.innerHTML = dt.toLocaleDateString(lang, options);
+                window.setTimeout(init, 1000);
+            }
+            window.addEventListener('load', init);
+         </script>
+    </head>
+    <body>
+        <div id='page'>
+            <div id='horloge'></div>
+        </div>
+    </body>
+</html>

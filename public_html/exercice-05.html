@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function init() {
+                var btn = document.querySelector('#btn');
+                btn.addEventListener('click', function() {
+                     var result = document.querySelector('#result');
+                     var a = document.createElement('a');
+                     a.href = "http://google.fr";
+                     a.innerHTML = "Google";
+                     result.appendChild(a);
+                 
+                   // alert('ok');
+                });
+           //tn.onclick = function() {
+            //
+            
+             var btn2 = document.querySelector('#btn2');
+             btn2.onclick = function() {
+                 var result = document.querySelector('#result');
+                   //result.innerHTML = '';
+                   var colA = result.querySelectorAll('a');
+                   for (var i = colA.length; i >= 0; i--) {
+                       var a = colA[i];
+                       var content = a.innerHTML;
+                       result.removeChild(a);
+                       var text = document.createTextNode(content);
+                       result.append(text);
+                        
+                } ;          
+             };
+        }
+           window.addEventListener('load', init);
+        </script>
+    </head>
+    <body>
+        <div id ="page">
+            <button id="btn">Ajouter un lien</button>
+            <button id="btn2">Supprimer un lien</button>
+            <div id="result"></div>
+            <progress value="0.5"></progress>           
+        </div>
+    </body>
+</html>

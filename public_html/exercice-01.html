@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JVS-IN : Exerciec 01</title>
+    <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <pre>
+
+    </pre>
+    <script>
+            var content = '';
+            //prenom = prompt('Entrez votre prenom');
+            //console.log(navigator);
+           // alert(prenom);
+           // document.write(prenom);
+           var pre = document.querySelector('pre');
+           for (p in navigator) {
+            content += p + ' : ' + navigator[p] + '\n';
+    
+           }
+           pre.innerHTML = content;
+             
+        </script>
+    
+</body>
+</html>

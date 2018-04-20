@@ -1,0 +1,72 @@
+/***************************Les tableaux************************/
+
+table {
+    width: 600px;
+    border: 2px solid black;
+    margin: 20px auto;
+    box-shadow: 7px 7px 10px gray;
+    border-collapse: collapse;
+}
+
+
+thead tr {
+    background:linear-gradient(gray, silver, gray);
+}
+td, th {
+    border:1px solid silver;
+}
+
+td  {
+    padding: 2px 5px;
+}
+
+tbody tr:nth-child(even){
+   background-color:#EEE;
+}
+
+tbody tr td{
+  transition:background-color ls linear, color 2s linear;
+ }
+
+tbody tr:hover td{
+   background-color:blue;
+   color:white; 
+}
+
+/***************************Les formulaires*******************/
+
+.row {
+    margin-bottom: 7px;
+}
+
+.row label {
+    display:inline-block;
+    width: 150px;
+    
+}
+
+@Media screen and (orientation:landscape) {
+.control {
+   display:inline-block;
+  }
+}
+
+.offset {
+    padding-left:150px;
+}
+
+.fieldset {
+    max-width:400px;
+    min-height:150px;
+    width:100%;
+    margin-right:20px auto;
+    
+}
+
+#erreur {
+    display:none;
+    border:1px solid red;
+    width:200%;
+    margin:20px auto;
+    color:red;
+}

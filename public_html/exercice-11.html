@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
+        <script src="js/lib/bootstrap.min.js" type="text/javascript"></script>
+        <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/lib/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="js/lib/bootstrap.min.js" type="text/javascript"></script>
+        
+        <script>
+            $(document).ready(function () {
+                $('#result').text('Bonjour le monde');
+                console.log($('#rresult').text());
+                $('#result').empty();
+                console.log($('#result').html('<a><a/>'));
+                $('#result').attr('href', 'http://www.google.fr');
+                $('#result').text('Google');
+                console.log($('#result a').attr('href'));
+
+                //Ajouter un style à l'element a
+                $('#result a').css({'color': 'red', 'font-size':'14pt'});
+                console.log($('#result a').css('color'));
+                var a = '<a href = "http://www.google.fr">Chercher</a>';
+                $('#result').empty().before(a).afer(a).append('totp')
+                            .append(a).append(a).wrap('<p></p>')
+                            .wrapInner('<span><span/>');
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <div id="page"></div>
+            <div id="result"></div>
+        </div>   
+    </body>
+</html>
